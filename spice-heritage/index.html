@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Spice Heritage – Authentic Indian Flavors, Crafted with Tradition. Fine dining Indian restaurant serving traditional recipes with passion." />
+  <meta name="keywords" content="Indian restaurant, authentic Indian food, biryani, curry, Indian cuisine" />
+  <title>Spice Heritage – Authentic Indian Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo" onclick="showPage('home')">
+      <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="17" stroke="#C9A84C" stroke-width="1.5"/>
+        <circle cx="18" cy="18" r="11" stroke="#C9A84C" stroke-width="1"/>
+        <path d="M18 4 L19.5 14 L18 13 L16.5 14 Z" fill="#E8751A"/>
+        <path d="M18 32 L19.5 22 L18 23 L16.5 22 Z" fill="#E8751A"/>
+        <path d="M4 18 L14 19.5 L13 18 L14 16.5 Z" fill="#E8751A"/>
+        <path d="M32 18 L22 19.5 L23 18 L22 16.5 Z" fill="#E8751A"/>
+        <circle cx="18" cy="18" r="4" fill="#C9A84C" opacity="0.5"/>
+        <circle cx="18" cy="18" r="2" fill="#E8751A"/>
+      </svg>
+      Spice <span>Heritage</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#" onclick="showPage('home')" data-page="home" class="nav-link active">Home</a></li>
+      <li><a href="#" onclick="showPage('about')" data-page="about" class="nav-link">About</a></li>
+      <li><a href="#" onclick="showPage('menu')" data-page="menu" class="nav-link">Menu</a></li>
+      <li><a href="#" onclick="showPage('reservation')" data-page="reservation" class="nav-link">Reserve</a></li>
+      <li><a href="#" onclick="showPage('contact')" data-page="contact" class="nav-link">Contact</a></li>
+      <li><a href="#" onclick="showPage('reservation')" class="nav-cta">Order Online</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="dark-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="#" onclick="showPage('home');closeMobile()" role="menuitem">Home</a>
+    <a href="#" onclick="showPage('about');closeMobile()" role="menuitem">About Us</a>
+    <a href="#" onclick="showPage('menu');closeMobile()" role="menuitem">Menu</a>
+    <a href="#" onclick="showPage('reservation');closeMobile()" role="menuitem">Reservations</a>
+    <a href="#" onclick="showPage('contact');closeMobile()" role="menuitem">Contact</a>
+    <a href="#" onclick="showPage('reservation');closeMobile()" style="color: var(--saffron-light);" role="menuitem">🛒 Order Online</a>
+  </div>
+</nav>
+
+<!-- ============================= HOME PAGE ============================= -->
+<div id="home-page" class="page active">
+
+  <!-- HERO -->
+  <section id="hero" aria-label="Hero section">
+    <div class="hero-overlay"></div>
+    <div class="mandala-bg hero-pattern"></div>
+    <div class="hero-img-side" role="img" aria-label="Indian cuisine background"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Est. 2004 · Mumbai, India</div>
+        <h1 class="hero-title">Authentic <em>Indian</em><br/>Flavors, Crafted<br/>with Tradition.</h1>
+        <p class="hero-tagline">Every dish tells a story of centuries-old spice routes,<br/>royal kitchens, and a passionate love for Indian cuisine.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-primary" onclick="showPage('menu')" aria-label="View our menu">
+            🍛 View Menu
+          </a>
+          <a href="#" class="btn-secondary" onclick="showPage('reservation')" aria-label="Reserve a table">
+            📅 Reserve a Table
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats" aria-label="Restaurant statistics">
+      <div class="hero-stat"><strong>20+</strong><span>Years Legacy</span></div>
+      <div class="hero-stat"><strong>80+</strong><span>Dishes</span></div>
+      <div class="hero-stat"><strong>4.9★</strong><span>Rating</span></div>
+      <div class="hero-stat"><strong>50K+</strong><span>Happy Guests</span></div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <div class="scroll-cue-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- FEATURED DISHES -->
+  <section id="featured" aria-labelledby="featured-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Chef's Selections</span>
+        <h2 class="section-title" id="featured-title">Signature <em>Dishes</em></h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-desc">Handcrafted with heirloom spices imported directly from Indian farms, delivering authentic flavors to your table.</p>
+      </div>
+      <div class="dishes-grid">
+        <div class="dish-card reveal reveal-delay-1">
+          <div class="dish-img-wrap">
+            <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=400&q=80" alt="Butter Chicken" loading="lazy"/>
+            <div class="dish-badge popular">Popular</div>
+            <div class="veg-indicator nonveg" title="Non-Vegetarian" aria-label="Non-vegetarian dish"></div>
+          </div>
+          <div class="dish-body">
+            <h3 class="dish-name">Murgh Makhani</h3>
+            <p class="dish-desc">Tender chicken in a rich, velvety tomato-cream sauce with aromatic fenugreek and whole spices.</p>
+            <div class="dish-footer">
+              <div class="dish-price">₹650 <small>/ serves 1</small></div>
+              <button class="add-btn" aria-label="Add Murgh Makhani to order">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="dish-card reveal reveal-delay-2">
+          <div class="dish-img-wrap">
+            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&q=80" alt="Biryani" loading="lazy"/>
+            <div class="dish-badge">Heritage Recipe</div>
+            <div class="veg-indicator nonveg" title="Non-Vegetarian" aria-label="Non-vegetarian dish"></div>
+          </div>
+          <div class="dish-body">
+            <h3 class="dish-name">Hyderabadi Dum Biryani</h3>
+            <p class="dish-desc">Aged basmati rice slow-cooked with saffron, whole spices & tender lamb in a sealed clay pot.</p>
+            <div class="dish-footer">
+              <div class="dish-price">₹850 <small>/ serves 1</small></div>
+              <button class="add-btn" aria-label="Add Biryani to order">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="dish-card reveal reveal-delay-3">
+          <div class="dish-img-wrap">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=80" alt="Paneer Tikka" loading="lazy"/>
+            <div class="dish-badge popular">Popular</div>
+            <div class="veg-indicator veg" title="Vegetarian" aria-label="Vegetarian dish"></div>
+          </div>
+          <div class="dish-body">
+            <h3 class="dish-name">Paneer Tikka Royale</h3>
+            <p class="dish-desc">Cubes of farm-fresh cottage cheese marinated in our secret masala blend and grilled in the tandoor.</p>
+            <div class="dish-footer">
+              <div class="dish-price">₹480 <small>/ serves 1</small></div>
+              <button class="add-btn" aria-label="Add Paneer Tikka to order">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="dish-card reveal">
+          <div class="dish-img-wrap">
+            <img src="https://images.unsplash.com/photo-1626776876729-bab4369a5a5a?w=400&q=80" alt="Dal Makhani" loading="lazy"/>
+            <div class="veg-indicator veg" title="Vegetarian" aria-label="Vegetarian dish"></div>
+          </div>
+          <div class="dish-body">
+            <h3 class="dish-name">Dal Makhani (24 hr)</h3>
+            <p class="dish-desc">Black lentils slow-simmered for 24 hours with butter and cream – a timeless Punjabi treasure.</p>
+            <div class="dish-footer">
+              <div class="dish-price">₹380 <small>/ serves 1</small></div>
+              <button class="add-btn" aria-label="Add Dal Makhani to order">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="#" class="btn-primary" onclick="showPage('menu')">View Full Menu →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT PREVIEW -->
+  <section id="about-preview" aria-labelledby="about-preview-title">
+    <div class="mandala-bg"></div>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-stack reveal">
+          <div class="about-img-main">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Restaurant interior" loading="lazy"/>
+          </div>
+          <div class="about-img-accent">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80" alt="Indian spices" loading="lazy"/>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="section-header reveal">
+            <span class="section-eyebrow">Our Story</span>
+            <h2 class="section-title" id="about-preview-title">A Legacy of <em>Flavor</em> & Tradition</h2>
+            <div class="section-divider"><span>✦</span></div>
+          </div>
+          <p class="reveal">Founded in 2004 by Chef Arjun Kapoor, Spice Heritage was born from a vision: to bring the rich, layered flavors of India's royal kitchens to modern dining tables.</p>
+          <p class="reveal">Our recipes have been passed down through generations, each dish carrying the memory of bazaars, spice gardens, and family kitchens from Rajasthan to Kerala.</p>
+          <div class="about-features reveal">
+            <div class="about-feature">
+              <div class="about-feature-icon">🌿</div>
+              <div class="about-feature-text"><strong>Farm Fresh</strong><span>Directly sourced from organic farms</span></div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">🏆</div>
+              <div class="about-feature-text"><strong>Award Winning</strong><span>Best Indian Restaurant 2023</span></div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">👨‍🍳</div>
+              <div class="about-feature-text"><strong>Master Chefs</strong><span>Trained in India's finest kitchens</span></div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">🧡</div>
+              <div class="about-feature-text"><strong>Made with Love</strong><span>Every dish, crafted with passion</span></div>
+            </div>
+          </div>
+          <a href="#" class="btn-primary reveal" onclick="showPage('about')">Discover Our Story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" aria-labelledby="testimonials-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Guest Reviews</span>
+        <h2 class="section-title" id="testimonials-title">Words from Our <em>Guests</em></h2>
+        <div class="section-divider"><span>✦</span></div>
+      </div>
+      <div class="testimonial-slider" role="region" aria-label="Customer testimonials">
+        <div class="testimonial-track" id="testimonial-track">
+          <div class="testimonial-slide" role="group" aria-label="Testimonial 1 of 4">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">"</div>
+              <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+              <p class="testimonial-text">The Hyderabadi Dum Biryani was an absolute revelation. You could taste the saffron, the slow-cooked lamb, the care. It transported me straight to the streets of Hyderabad. Truly extraordinary.</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Vikram Sharma"/>
+                <div class="testimonial-author-info">
+                  <strong>Vikram Sharma</strong>
+                  <span>Food Critic, Delhi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide" role="group" aria-label="Testimonial 2 of 4">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">"</div>
+              <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+              <p class="testimonial-text">We celebrated our anniversary here and the evening was magical. The ambiance, the service, and the food — especially the Paneer Tikka — everything was absolutely perfect. We will return every year.</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=100&q=80" alt="Priya & Anil Mehta"/>
+                <div class="testimonial-author-info">
+                  <strong>Priya & Anil Mehta</strong>
+                  <span>Regular Guests, Mumbai</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide" role="group" aria-label="Testimonial 3 of 4">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">"</div>
+              <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+              <p class="testimonial-text">As a chef myself, I have very high standards. Spice Heritage exceeded them all. Their Dal Makhani is the finest I have ever had — outside of my grandmother's kitchen. That is the highest praise I can give.</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Marco D'Angelo"/>
+                <div class="testimonial-author-info">
+                  <strong>Marco D'Angelo</strong>
+                  <span>Executive Chef, Florence</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide" role="group" aria-label="Testimonial 4 of 4">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">"</div>
+              <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+              <p class="testimonial-text">The warmth of the staff matches the warmth of the food. From the moment you enter, you feel welcomed into someone's home. The Murgh Makhani was velvety and fragrant — a masterpiece in a bowl.</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Sarah Thompson"/>
+                <div class="testimonial-author-info">
+                  <strong>Sarah Thompson</strong>
+                  <span>Travel Blogger, London</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="prev-btn" aria-label="Previous testimonial">←</button>
+          <button class="slider-btn" id="next-btn" aria-label="Next testimonial">→</button>
+        </div>
+        <div class="slider-dots" role="tablist" aria-label="Testimonial navigation">
+          <div class="slider-dot active" role="tab" aria-selected="true" aria-label="Testimonial 1" onclick="goToSlide(0)"></div>
+          <div class="slider-dot" role="tab" aria-selected="false" aria-label="Testimonial 2" onclick="goToSlide(1)"></div>
+          <div class="slider-dot" role="tab" aria-selected="false" aria-label="Testimonial 3" onclick="goToSlide(2)"></div>
+          <div class="slider-dot" role="tab" aria-selected="false" aria-label="Testimonial 4" onclick="goToSlide(3)"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="mandala-bg"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Spice <span>Heritage</span></div>
+          <p class="footer-desc">Bringing the authentic tastes of India's royal kitchens to your table since 2004. Every dish crafted with love, tradition, and the finest spices.</p>
+          <div class="footer-newsletter">
+            <h5>Newsletter</h5>
+            <div class="newsletter-input">
+              <input type="email" placeholder="Your email address" id="newsletter-email" aria-label="Email for newsletter"/>
+              <button onclick="subscribeNewsletter()" aria-label="Subscribe to newsletter">Subscribe</button>
+            </div>
+            <div class="success-msg" id="newsletter-success">🎉 Thank you for subscribing!</div>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('about')">About Us</a></li>
+            <li><a href="#" onclick="showPage('menu')">Menu</a></li>
+            <li><a href="#" onclick="showPage('reservation')">Reservations</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            <li><a href="#" onclick="showPage('reservation')">Order Online</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Opening Hours</h4>
+          <div class="footer-hours">
+            <div class="hours-item"><span class="day">Mon – Thu</span><span class="time">12pm – 10pm</span></div>
+            <div class="hours-item"><span class="day">Fri – Sat</span><span class="time">12pm – 11pm</span></div>
+            <div class="hours-item"><span class="day">Sunday</span><span class="time">11am – 10pm</span></div>
+            <div class="hours-item" style="color:var(--saffron-light);"><span>Happy Hours</span><span>3pm – 6pm Daily</span></div>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Contact</h4>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:0.87rem;color:rgba(250,243,224,0.65);">
+            <div>📍 42 Heritage Lane, Bandra West<br/>Mumbai, Maharashtra 400050</div>
+            <div>📞 +91 98765 43210</div>
+            <div>✉️ hello@spiceheritage.in</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 John Varrel Magbanua. All rights reserved.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" aria-label="Instagram">𖹭</a>
+          <a href="#" aria-label="Facebook">ⓕ</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="YouTube">▷</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- end home-page -->
+
+
+<!-- ============================= ABOUT PAGE ============================= -->
+<div id="about-page" class="page">
+  <div class="page-banner">
+    <div class="mandala-bg"></div>
+    <div class="container">
+      <span class="section-eyebrow">Who We Are</span>
+      <h1 class="section-title" style="color:var(--cream);">Our <em style="color:var(--saffron-light);">Story</em> & Heritage</h1>
+      <div class="section-divider"><span style="color:var(--gold);">✦</span></div>
+      <p class="section-desc">Two decades of passion, tradition, and unforgettable Indian flavors.</p>
+    </div>
+  </div>
+
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;" class="reveal">
+        <div>
+          <span class="section-eyebrow">Our Beginning</span>
+          <h2 class="section-title">From a Small <em>Dream</em> to a Legacy</h2>
+          <p style="color:var(--text-light);line-height:1.8;margin-bottom:16px;">In 2004, Chef Arjun Kapoor left his position at a five-star hotel with one dream: to open a restaurant that felt like eating at his mother's table — but for the world. He carried with him a battered notebook filled with his grandmother's recipes, handwritten in Hindi.</p>
+          <p style="color:var(--text-light);line-height:1.8;margin-bottom:16px;">Spice Heritage opened its doors in Bandra West with just 12 tables and a kitchen powered by three people. Within a year, the queues stretched down the street. Within a decade, it became one of India's most celebrated dining destinations.</p>
+          <p style="color:var(--text-light);line-height:1.8;">Today, we serve over 500 guests every day, but the soul remains the same: authentic, heartfelt Indian food made with the finest ingredients and infinite care.</p>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;box-shadow:0 12px 40px var(--shadow);">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Restaurant interior" loading="lazy" style="width:100%;height:400px;object-fit:cover;"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--cream-dark);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">The Team</span>
+        <h2 class="section-title">Meet Our <em>Chefs</em></h2>
+        <div class="section-divider"><span>✦</span></div>
+      </div>
+      <div class="chef-grid">
+        <div class="chef-card reveal">
+          <div class="chef-img"><img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&q=80" alt="Chef Arjun Kapoor" loading="lazy"/></div>
+          <div class="chef-body">
+            <h3 class="chef-name">Chef Arjun Kapoor</h3>
+            <div class="chef-role">Founder & Executive Chef</div>
+            <p class="chef-bio">Trained at Le Cordon Bleu and the ITC Grand Central, Arjun brings 25 years of expertise. His speciality is Mughlai cuisine and slow-cooked preparations.</p>
+          </div>
+        </div>
+        <div class="chef-card reveal reveal-delay-1">
+          <div class="chef-img"><img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=400&q=80" alt="Chef Meera Iyer" loading="lazy"/></div>
+          <div class="chef-body">
+            <h3 class="chef-name">Chef Meera Iyer</h3>
+            <div class="chef-role">Head Chef – South Indian</div>
+            <p class="chef-bio">From a family of cooks in Chettinad, Meera mastered over 200 regional recipes before joining Spice Heritage. She heads our South Indian and seafood menu.</p>
+          </div>
+        </div>
+        <div class="chef-card reveal reveal-delay-2">
+          <div class="chef-img"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&q=80" alt="Chef Ranjit Singh" loading="lazy"/></div>
+          <div class="chef-body">
+            <h3 class="chef-name">Chef Ranjit Singh</h3>
+            <div class="chef-role">Tandoor & Bread Specialist</div>
+            <p class="chef-bio">A fourth-generation tandoor specialist from Amritsar. His breads — naans, kulchas, and parathas — have earned a devoted following among our regulars.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:linear-gradient(135deg,var(--maroon-dark),var(--maroon));position:relative;overflow:hidden;">
+    <div class="mandala-bg"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow" style="color:var(--gold-light);">What We Stand For</span>
+        <h2 class="section-title" style="color:var(--cream);">Our Mission & <em style="color:var(--saffron-light);">Values</em></h2>
+        <div class="section-divider"><span style="color:var(--gold);">✦</span></div>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal" style="background:rgba(255,255,255,0.05);border-top:3px solid var(--gold);">
+          <div class="value-icon">🌿</div>
+          <h3 class="value-title" style="color:var(--gold-light);">Authenticity</h3>
+          <p class="value-text" style="color:rgba(250,243,224,0.7);">Every recipe traces back to a real family kitchen. We use traditional methods — stone grinding, dum cooking, wood-fired tandoors — that honor the origin of each dish.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-1" style="background:rgba(255,255,255,0.05);border-top:3px solid var(--saffron);">
+          <div class="value-icon">♻️</div>
+          <h3 class="value-title" style="color:var(--gold-light);">Sustainability</h3>
+          <p class="value-text" style="color:rgba(250,243,224,0.7);">We source 80% of our produce from certified organic farms within 200km. Zero single-use plastic. We compost all kitchen waste and run on renewable energy.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-2" style="background:rgba(255,255,255,0.05);border-top:3px solid var(--gold);">
+          <div class="value-icon">🤝</div>
+          <h3 class="value-title" style="color:var(--gold-light);">Community</h3>
+          <p class="value-text" style="color:rgba(250,243,224,0.7);">We train and employ over 40 people from the local community. Our apprenticeship program has launched the careers of more than 100 chefs across India.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-3" style="background:rgba(255,255,255,0.05);border-top:3px solid var(--saffron);">
+          <div class="value-icon">🎨</div>
+          <h3 class="value-title" style="color:var(--gold-light);">Innovation</h3>
+          <p class="value-text" style="color:rgba(250,243,224,0.7);">While rooted in tradition, we embrace creativity. Our seasonal tasting menus push the boundaries of Indian cuisine while always remaining true to its soul.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Ambiance</span>
+        <h2 class="section-title">The <em>Experience</em></h2>
+        <div class="section-divider"><span>✦</span></div>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80" alt="Restaurant dining area" loading="lazy"/></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=80" alt="Restaurant bar" loading="lazy"/></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=400&q=80" alt="Private dining" loading="lazy"/></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&q=80" alt="Kitchen" loading="lazy"/></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=400&q=80" alt="Food preparation" loading="lazy"/></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="mandala-bg"></div>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2024 Spice Heritage. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ============================= MENU PAGE ============================= -->
+<div id="menu-page" class="page">
+  <div class="menu-header-bg">
+    <div class="mandala-bg"></div>
+    <div class="container">
+      <span class="section-eyebrow">Discover</span>
+      <h1 class="section-title" style="color:var(--cream);">Our <em style="color:var(--saffron-light);">Menu</em></h1>
+      <div class="section-divider"><span style="color:var(--gold);">✦</span></div>
+      <p style="color:rgba(250,243,224,0.65);font-size:1rem;max-width:500px;margin:0 auto;">A culinary journey through the diverse regional cuisines of India.</p>
+    </div>
+  </div>
+
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div class="filter-bar" role="group" aria-label="Menu filters">
+        <button class="filter-btn active" onclick="filterMenu('all', this)" data-filter="all">All Items</button>
+        <button class="filter-btn" onclick="filterMenu('veg', this)" data-filter="veg">🟢 Vegetarian</button>
+        <button class="filter-btn" onclick="filterMenu('nonveg', this)" data-filter="nonveg">🔴 Non-Vegetarian</button>
+        <button class="filter-btn" onclick="filterMenu('spicy', this)" data-filter="spicy">🌶️ Spicy</button>
+        <button class="filter-btn" onclick="filterMenu('popular', this)" data-filter="popular">⭐ Popular</button>
+      </div>
+
+      <!-- Starters -->
+      <div class="menu-category">
+        <h2 class="menu-category-title"><span>🥗</span> Starters & Appetizers</h2>
+        <div class="menu-items-grid" id="starters-grid">
+          <div class="menu-item" data-type="nonveg" data-tags="popular spicy">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80" alt="Chicken 65" loading="lazy"/><div class="veg-indicator nonveg" title="Non-Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Chicken 65</h3><span class="menu-item-price">₹350</span></div>
+              <p class="menu-item-desc">Crispy deep-fried chicken marinated in fiery red chili, curry leaves and yogurt. A Madras classic.</p>
+              <div class="menu-item-tags"><span class="tag tag-spicy">🌶️ Spicy</span><span class="tag tag-popular">⭐ Popular</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="veg" data-tags="popular">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=80" alt="Paneer Tikka" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Paneer Tikka</h3><span class="menu-item-price">₹320</span></div>
+              <p class="menu-item-desc">Cottage cheese cubes marinated in spiced yogurt and grilled in our stone tandoor until perfectly charred.</p>
+              <div class="menu-item-tags"><span class="tag tag-popular">⭐ Popular</span><span class="tag tag-chef">👨‍🍳 Chef's Pick</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="veg" data-tags="spicy">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d6?w=400&q=80" alt="Samosa Chaat" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Samosa Chaat</h3><span class="menu-item-price">₹180</span></div>
+              <p class="menu-item-desc">Crispy samosas crushed over creamy yogurt, sweet tamarind chutney, and fresh chili. An explosion of textures.</p>
+              <div class="menu-item-tags"><span class="tag tag-spicy">🌶️ Spicy</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="nonveg" data-tags="popular">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1545247181-516773cae754?w=400&q=80" alt="Seekh Kebab" loading="lazy"/><div class="veg-indicator nonveg" title="Non-Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Seekh Kebab</h3><span class="menu-item-price">₹420</span></div>
+              <p class="menu-item-desc">Minced lamb mixed with onion, green chili, and aromatic spices, skewered and grilled over live charcoal.</p>
+              <div class="menu-item-tags"><span class="tag tag-popular">⭐ Popular</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Course -->
+      <div class="menu-category">
+        <h2 class="menu-category-title"><span>🍛</span> Main Course — Vegetarian</h2>
+        <div class="menu-items-grid">
+          <div class="menu-item" data-type="veg" data-tags="popular">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1626776876729-bab4369a5a5a?w=400&q=80" alt="Dal Makhani" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Dal Makhani</h3><span class="menu-item-price">₹380</span></div>
+              <p class="menu-item-desc">24-hour slow-simmered black lentils with butter, cream, and house spices. The most loved dish on our menu.</p>
+              <div class="menu-item-tags"><span class="tag tag-popular">⭐ Popular</span><span class="tag tag-chef">👨‍🍳 Heritage Recipe</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="veg" data-tags="">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80" alt="Palak Paneer" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Palak Paneer</h3><span class="menu-item-price">₹360</span></div>
+              <p class="menu-item-desc">Fresh spinach purée with soft paneer cubes, ginger, garlic, and a hint of cream. Nutritious and deeply flavorful.</p>
+              <div class="menu-item-tags"><span class="tag tag-chef">👨‍🍳 House Favorite</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="veg" data-tags="spicy">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&q=80" alt="Chana Masala" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Punjabi Chana Masala</h3><span class="menu-item-price">₹320</span></div>
+              <p class="menu-item-desc">Chickpeas cooked in a bold, tangy tomato and onion gravy with whole dried spices and amchur.</p>
+              <div class="menu-item-tags"><span class="tag tag-spicy">🌶️ Spicy</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h2 class="menu-category-title"><span>🍗</span> Main Course — Non-Vegetarian</h2>
+        <div class="menu-items-grid">
+          <div class="menu-item" data-type="nonveg" data-tags="popular">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=400&q=80" alt="Butter Chicken" loading="lazy"/><div class="veg-indicator nonveg" title="Non-Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Murgh Makhani</h3><span class="menu-item-price">₹650</span></div>
+              <p class="menu-item-desc">Tender tandoor-roasted chicken in a velvety tomato-cream sauce with kasuri methi. A timeless classic.</p>
+              <div class="menu-item-tags"><span class="tag tag-popular">⭐ Popular</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="nonveg" data-tags="spicy popular">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=400&q=80" alt="Lamb Rogan Josh" loading="lazy"/><div class="veg-indicator nonveg" title="Non-Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Lamb Rogan Josh</h3><span class="menu-item-price">₹780</span></div>
+              <p class="menu-item-desc">Kashmiri slow-braised lamb with Kashmiri red chili, whole spices and fragrant bay leaves. Rich and aromatic.</p>
+              <div class="menu-item-tags"><span class="tag tag-spicy">🌶️ Spicy</span><span class="tag tag-popular">⭐ Popular</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="nonveg" data-tags="">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80" alt="Fish Curry" loading="lazy"/><div class="veg-indicator nonveg" title="Non-Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Goan Fish Curry</h3><span class="menu-item-price">₹690</span></div>
+              <p class="menu-item-desc">Fresh pomfret in a tangy coconut-tamarind gravy spiced with Goan recheado masala. Pure coastal bliss.</p>
+              <div class="menu-item-tags"><span class="tag tag-chef">👨‍🍳 Chef's Rec</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Biryani -->
+      <div class="menu-category">
+        <h2 class="menu-category-title"><span>🫙</span> Biryani & Rice</h2>
+        <div class="menu-items-grid">
+          <div class="menu-item" data-type="nonveg" data-tags="popular">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&q=80" alt="Hyderabadi Biryani" loading="lazy"/><div class="veg-indicator nonveg" title="Non-Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Hyderabadi Dum Biryani</h3><span class="menu-item-price">₹850</span></div>
+              <p class="menu-item-desc">Saffron-infused aged basmati with slow-cooked lamb, caramelized onions, fried cashews, sealed in dough.</p>
+              <div class="menu-item-tags"><span class="tag tag-popular">⭐ Popular</span><span class="tag tag-chef">👨‍🍳 Signature</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="veg" data-tags="">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&q=80" alt="Veg Biryani" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Lucknowi Veg Dum</h3><span class="menu-item-price">₹550</span></div>
+              <p class="menu-item-desc">Seasonal vegetables, paneer, and cashews layered with saffron rice and cooked on slow dum in a sealed pot.</p>
+              <div class="menu-item-tags"></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="nonveg" data-tags="popular spicy">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&q=80" alt="Prawn Biryani" loading="lazy"/><div class="veg-indicator nonveg" title="Non-Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Kerala Prawn Biryani</h3><span class="menu-item-price">₹920</span></div>
+              <p class="menu-item-desc">Juicy tiger prawns in coconut-spiced gravy layered with fragrant malabar rice and fried onions.</p>
+              <div class="menu-item-tags"><span class="tag tag-spicy">🌶️ Spicy</span><span class="tag tag-popular">⭐ Popular</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breads -->
+      <div class="menu-category">
+        <h2 class="menu-category-title"><span>🫓</span> Indian Breads</h2>
+        <div class="menu-items-grid">
+          <div class="menu-item" data-type="veg" data-tags="popular">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=400&q=80" alt="Butter Naan" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Butter Naan</h3><span class="menu-item-price">₹80</span></div>
+              <p class="menu-item-desc">Soft leavened flatbread baked in our clay tandoor, brushed with pure white butter and fresh garlic.</p>
+              <div class="menu-item-tags"><span class="tag tag-popular">⭐ Popular</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="veg" data-tags="">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1630853165133-1ed24d231c55?w=400&q=80" alt="Paratha" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Amritsari Kulcha</h3><span class="menu-item-price">₹140</span></div>
+              <p class="menu-item-desc">Stuffed with spiced potatoes and onions, baked in tandoor and finished with a generous knob of white butter.</p>
+              <div class="menu-item-tags"><span class="tag tag-chef">👨‍🍳 Chef's Pick</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="veg" data-tags="">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&q=80" alt="Missi Roti" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Missi Roti</h3><span class="menu-item-price">₹90</span></div>
+              <p class="menu-item-desc">Whole wheat and gram flour flatbread flavored with fenugreek leaves, green chili, and carom seeds.</p>
+              <div class="menu-item-tags"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desserts -->
+      <div class="menu-category">
+        <h2 class="menu-category-title"><span>🍮</span> Desserts</h2>
+        <div class="menu-items-grid">
+          <div class="menu-item" data-type="veg" data-tags="popular">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1601303516534-bf4d45f6ddc6?w=400&q=80" alt="Gulab Jamun" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Gulab Jamun</h3><span class="menu-item-price">₹180</span></div>
+              <p class="menu-item-desc">Soft milk-solid dumplings fried golden and soaked in rose-cardamom sugar syrup. Served warm, 3 pieces.</p>
+              <div class="menu-item-tags"><span class="tag tag-popular">⭐ Popular</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="veg" data-tags="popular">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&q=80" alt="Kulfi" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Malai Kulfi</h3><span class="menu-item-price">₹220</span></div>
+              <p class="menu-item-desc">Traditional Indian ice cream with saffron, pistachios, and cardamom. Dense, creamy and unforgettable.</p>
+              <div class="menu-item-tags"><span class="tag tag-popular">⭐ Popular</span><span class="tag tag-chef">👨‍🍳 Heritage Recipe</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beverages -->
+      <div class="menu-category">
+        <h2 class="menu-category-title"><span>🥤</span> Beverages</h2>
+        <div class="menu-items-grid">
+          <div class="menu-item" data-type="veg" data-tags="">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1592679219534-a645c5c1aaee?w=400&q=80" alt="Mango Lassi" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Mango Lassi</h3><span class="menu-item-price">₹150</span></div>
+              <p class="menu-item-desc">Creamy blended yogurt with Alphonso mango pulp, cardamom and a hint of rose water. Utterly refreshing.</p>
+              <div class="menu-item-tags"></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="veg" data-tags="">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80" alt="Masala Chai" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Masala Chai</h3><span class="menu-item-price">₹80</span></div>
+              <p class="menu-item-desc">Brewed with ginger, cardamom, cinnamon, and cloves. Our signature chai, steeped to perfection.</p>
+              <div class="menu-item-tags"><span class="tag tag-chef">👨‍🍳 House Blend</span></div>
+            </div>
+          </div>
+          <div class="menu-item" data-type="veg" data-tags="spicy">
+            <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=400&q=80" alt="Jaljeera" loading="lazy"/><div class="veg-indicator veg" title="Vegetarian"></div></div>
+            <div class="menu-item-body">
+              <div class="menu-item-top"><h3 class="menu-item-name">Jaljeera Cooler</h3><span class="menu-item-price">₹120</span></div>
+              <p class="menu-item-desc">A tangy, spicy digestive made with tamarind, black salt, cumin, and fresh mint. The best start to a meal.</p>
+              <div class="menu-item-tags"><span class="tag tag-spicy">🌶️ Spicy</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2024 Spice Heritage. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ============================= RESERVATION PAGE ============================= -->
+<div id="reservation-page" class="page">
+  <div class="page-banner">
+    <div class="mandala-bg"></div>
+    <div class="container">
+      <span class="section-eyebrow">Book a Table</span>
+      <h1 class="section-title" style="color:var(--cream);">Reserve Your <em style="color:var(--saffron-light);">Experience</em></h1>
+      <div class="section-divider"><span style="color:var(--gold);">✦</span></div>
+      <p style="color:rgba(250,243,224,0.65);font-size:1rem;">Secure your spot at Spice Heritage. We recommend booking at least 24 hours in advance.</p>
+    </div>
+  </div>
+
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div class="reservation-layout">
+        <div class="form-card reveal">
+          <h2 class="form-title">Make a Reservation</h2>
+          <p class="form-subtitle">Fill in your details and we'll confirm within 2 hours.</p>
+          <form id="reservation-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-first">First Name *</label>
+                <input type="text" id="res-first" name="firstname" placeholder="Arjun" required aria-required="true"/>
+                <div class="form-error" id="res-first-err">Please enter your first name.</div>
+              </div>
+              <div class="form-group">
+                <label for="res-last">Last Name *</label>
+                <input type="text" id="res-last" name="lastname" placeholder="Sharma" required aria-required="true"/>
+                <div class="form-error" id="res-last-err">Please enter your last name.</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-phone">Phone *</label>
+                <input type="tel" id="res-phone" name="phone" placeholder="+91 98765 43210" required aria-required="true"/>
+                <div class="form-error" id="res-phone-err">Please enter a valid phone number.</div>
+              </div>
+              <div class="form-group">
+                <label for="res-email">Email *</label>
+                <input type="email" id="res-email" name="email" placeholder="arjun@email.com" required aria-required="true"/>
+                <div class="form-error" id="res-email-err">Please enter a valid email address.</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-date">Date *</label>
+                <input type="date" id="res-date" name="date" required aria-required="true"/>
+                <div class="form-error" id="res-date-err">Please select a date.</div>
+              </div>
+              <div class="form-group">
+                <label for="res-time">Time *</label>
+                <select id="res-time" name="time" required aria-required="true">
+                  <option value="">Select a time</option>
+                  <option>12:00 PM</option><option>12:30 PM</option>
+                  <option>1:00 PM</option><option>1:30 PM</option>
+                  <option>2:00 PM</option><option>7:00 PM</option>
+                  <option>7:30 PM</option><option>8:00 PM</option>
+                  <option>8:30 PM</option><option>9:00 PM</option>
+                  <option>9:30 PM</option>
+                </select>
+                <div class="form-error" id="res-time-err">Please select a time.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="res-guests">Number of Guests *</label>
+              <select id="res-guests" name="guests" required aria-required="true">
+                <option value="">Select guests</option>
+                <option>1 Guest</option><option>2 Guests</option><option>3 Guests</option>
+                <option>4 Guests</option><option>5 Guests</option><option>6 Guests</option>
+                <option>7-10 Guests</option><option>10+ Guests (call us)</option>
+              </select>
+              <div class="form-error" id="res-guests-err">Please select number of guests.</div>
+            </div>
+            <div class="form-group">
+              <label for="res-notes">Special Requests</label>
+              <textarea id="res-notes" name="notes" placeholder="Allergies, celebrations, seating preferences..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn" aria-label="Submit reservation">Confirm Reservation 📅</button>
+            <div class="success-msg" id="res-success">🎉 Reservation confirmed! We'll send a confirmation to your email shortly.</div>
+          </form>
+        </div>
+        <div class="reveal">
+          <div class="map-section">
+            <div class="map-placeholder">
+              <span>📍</span>
+              <p style="font-size:1.1rem;font-weight:500;">42 Heritage Lane, Bandra West</p>
+              <p>Mumbai, Maharashtra 400050</p>
+              <p style="font-size:0.8rem;margin-top:8px;opacity:0.5;">(Interactive map — enable Google Maps API)</p>
+            </div>
+          </div>
+          <div class="contact-info-cards">
+            <div class="contact-info-card">
+              <div class="contact-info-icon">⏰</div>
+              <div>
+                <strong>Opening Hours</strong>
+                <dl class="hours-grid">
+                  <dt>Monday – Thursday</dt><dd>12:00 PM – 10:00 PM</dd>
+                  <dt>Friday – Saturday</dt><dd>12:00 PM – 11:00 PM</dd>
+                  <dt>Sunday</dt><dd>11:00 AM – 10:00 PM</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">📞</div>
+              <div>
+                <strong>Call for Reservations</strong>
+                <p>+91 98765 43210<br/>+91 22 4567 8901</p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">💬</div>
+              <div>
+                <strong>Private Dining & Events</strong>
+                <p>Hosting a special occasion? Contact our events team at events@spiceheritage.in</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2024 Spice Heritage. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ============================= CONTACT PAGE ============================= -->
+<div id="contact-page" class="page">
+  <div class="page-banner">
+    <div class="mandala-bg"></div>
+    <div class="container">
+      <span class="section-eyebrow">Get in Touch</span>
+      <h1 class="section-title" style="color:var(--cream);">Say <em style="color:var(--saffron-light);">Hello</em></h1>
+      <div class="section-divider"><span style="color:var(--gold);">✦</span></div>
+      <p style="color:rgba(250,243,224,0.65);font-size:1rem;">We'd love to hear from you. Drop us a message anytime.</p>
+    </div>
+  </div>
+
+  <section style="background:var(--cream);">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-details reveal">
+          <h2>We'd Love to<br/>Hear From You</h2>
+          <p>Whether you have a question about our menu, want to plan a private dining event, or just want to share your feedback — our team is ready to listen.</p>
+          <div class="contact-detail-item">
+            <div class="detail-icon">📍</div>
+            <div class="detail-text"><strong>Visit Us</strong><p>42 Heritage Lane, Bandra West<br/>Mumbai, Maharashtra 400050</p></div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="detail-icon">📞</div>
+            <div class="detail-text"><strong>Call Us</strong><p>+91 98765 43210<br/>+91 22 4567 8901</p></div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="detail-icon">✉️</div>
+            <div class="detail-text"><strong>Email Us</strong><p>hello@spiceheritage.in<br/>events@spiceheritage.in</p></div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="detail-icon">⏰</div>
+            <div class="detail-text"><strong>Hours</strong><p>Mon–Thu: 12pm–10pm<br/>Fri–Sat: 12pm–11pm<br/>Sun: 11am–10pm</p></div>
+          </div>
+          <div class="social-links" aria-label="Social media">
+            <a href="#" class="social-link" aria-label="Instagram">📸</a>
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+            <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+
+        <div class="form-card reveal" style="align-self:start;">
+          <h2 class="form-title">Send a Message</h2>
+          <p class="form-subtitle">We typically respond within 4 business hours.</p>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="con-name">Full Name *</label>
+                <input type="text" id="con-name" placeholder="Priya Sharma" required aria-required="true"/>
+                <div class="form-error" id="con-name-err">Please enter your name.</div>
+              </div>
+              <div class="form-group">
+                <label for="con-email">Email *</label>
+                <input type="email" id="con-email" placeholder="priya@email.com" required aria-required="true"/>
+                <div class="form-error" id="con-email-err">Please enter a valid email.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="con-subject">Subject *</label>
+              <input type="text" id="con-subject" placeholder="Table reservation, feedback..." required aria-required="true"/>
+              <div class="form-error" id="con-subject-err">Please enter a subject.</div>
+            </div>
+            <div class="form-group">
+              <label for="con-message">Message *</label>
+              <textarea id="con-message" placeholder="Write your message here..." style="min-height:140px;" required aria-required="true"></textarea>
+              <div class="form-error" id="con-message-err">Please enter a message.</div>
+            </div>
+            <button type="submit" class="submit-btn" aria-label="Send message">Send Message ✉️</button>
+            <div class="success-msg" id="con-success">✅ Message sent! Our team will get back to you within 4 hours.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2024 Spice Heritage. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ===== FLOATING BUTTONS ===== -->
+<a href="https://wa.me/919876543210" id="whatsapp-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+
+<script src="scripts.js"></script>
+</body>
+</html>
